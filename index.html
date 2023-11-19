@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<h1>heheheh</h1>
+<p>pure rage.</p>
+
+
+
+<script>
+    function bigImg(x) {
+        x.style.height = "640px";
+        x.style.width = "640px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "320px";
+        x.style.width = "320px";
+    }
+</script>
+
+<p id="demo">click the button under me.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "wow"'>yes me</button>
+<br>
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)"  src="assets/images/asa.jpg" alt="asa">
+
 </body>
 </html>
