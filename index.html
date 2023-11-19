@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+    .zoom {
+        padding: 50px;
+        /*background-color: green;*/
+        transition: transform .2s; /* Animation */
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .zoom:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+</style>
+
 <body>
 <h1>heheheh</h1>
 <p>pure rage.</p>
 
 
+<script src="js/dragscroll.js"></script>
 
 <script>
     function bigImg(x) {
@@ -21,7 +38,7 @@
 <p id="demo">click the button under me.</p>
 <button type="button" onclick='document.getElementById("demo").innerHTML = "wow"'>yes me</button>
 <br>
-<img onmouseover="bigImg(this)" onmouseout="normalImg(this)"  src="assets/images/asa.jpg" alt="asa">
+<img class="zoom"  src="assets/images/asa.jpg" alt="asa">
 
 </body>
 </html>
