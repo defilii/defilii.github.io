@@ -1,58 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    body {
-      user-select: none;
-      -moz-user-select: none;
-    }
-    .zoomables {
-      border: 1px solid black;
-      width: 100%;
-    }
-    #myBoundaryElement {
-      margin-left: 10%;
-      height: 700px;
-      max-width: 70%;
-      border: 1px solid red;
-      background-color: #f8f8f8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      resize: both;
-    }
-  </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Zooming via HTML5 Canvas Context</title>
 </head>
+<script type = "text/javascript" src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+    .canvasStyle {
+        border: 1px solid black;
+        width: 700px;
+        height: 700px;
+        vertical-align: middle;
+    }
+
+    #wrapper {
+        width: 95%;
+        border: 1px solid black;
+        align-content: center;
+        overflow: hidden;
+    }
+
+    #first {
+        min-width: 700px;
+        max-width: 1500px;
+        width: 50%;
+        float: left;
+    }
+
+    #second {
+        overflow: hidden;
+        width: 50%;
+    }
+</style>
+
 <body>
+<div id="wrapper">
+    <div id="first">
+        <canvas id="canvas" class="canvasStyle" height="1000" width="1000">
+            Your browser does not support the HTML 5 Canvas :(
+        </canvas>
+    </div>
+    <div id="second">
+        <h1 id="info"></h1>
 
-<h1>Zoom</h1>
-
-<div id="myBoundaryElement" resizable="true">
-  <img class="zoomables" id="zoomy1" src="assets/images/map.jpg"  usemap="#map1" alt="polivian map">
-  <map name="map1">
-    <area
-            shape="poly"
-            coords="152,244,160,180,251,133,368,123,495,117,551,185,
-                467,278,396,303,311,298,230,292,169,268"
-            alt="Polygon"
-            onmouseover="myFunction('currently hovering on an element to display desc')"
-            onmouseout="myFunction('')"
-    />
-  </map>
+    </div>
 </div>
-<h1 id="info"></h1>
-<script>
-  function myFunction(name) {
-    document.getElementById("info").innerHTML = name;
-  }
-</script>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu libero id neque tincidunt dapibus id at lacus.</p>
 
-<script type="module">
-  import Zoomy from "./Zoomy.js";
-  const zoomy1 = new Zoomy("zoomy1", {zoomUpperConstraint: 3});
+<script type="text/javascript" src="script.js"></script>
+<script>
+
+
+
+
 </script>
 </body>
 </html>
