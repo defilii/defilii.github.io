@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html>
-
-<style>
-    .zoom {
-        padding: 50px;
-        /*background-color: green;*/
-        transition: transform .2s; /* Animation */
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      user-select: none;
+      -moz-user-select: none;
     }
-
-    .zoom:hover {
-        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    .zoomables {
+      border: 1px solid black;
+      width: 100%;
     }
-</style>
-
+    #myBoundaryElement {
+      margin-left: 10%;
+      height: 700px;
+      max-width: 70%;
+      border: 1px solid red;
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      resize: both;
+    }
+  </style>
+</head>
 <body>
-<h1>heheheh</h1>
-<p>pure rage.</p>
 
+<h1>Zoom</h1>
 
-<script src="js/dragscroll.js"></script>
-
+<div id="myBoundaryElement" resizable="true">
+  <img class="zoomables" id="zoomy1" src="assets/images/map.jpg"  usemap="#map1" alt="polivian map">
+  <map name="map1">
+    <area
+            shape="poly"
+            coords="152,244,160,180,251,133,368,123,495,117,551,185,
+                467,278,396,303,311,298,230,292,169,268"
+            alt="Polygon"
+            onmouseover="myFunction('currently hovering on an element to display desc')"
+            onmouseout="myFunction('')"
+    />
+  </map>
+</div>
+<h1 id="info"></h1>
 <script>
-    function bigImg(x) {
-        x.style.height = "640px";
-        x.style.width = "640px";
-    }
-
-    function normalImg(x) {
-        x.style.height = "320px";
-        x.style.width = "320px";
-    }
+  function myFunction(name) {
+    document.getElementById("info").innerHTML = name;
+  }
 </script>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu libero id neque tincidunt dapibus id at lacus.</p>
 
-<p id="demo">click the button under me.</p>
-<button type="button" onclick='document.getElementById("demo").innerHTML = "wow"'>yes me</button>
-<br>
-<img class="zoom"  src="assets/images/asa.jpg" alt="asa">
-
+<script type="module">
+  import Zoomy from "./Zoomy.js";
+  const zoomy1 = new Zoomy("zoomy1", {zoomUpperConstraint: 3});
+</script>
 </body>
 </html>
