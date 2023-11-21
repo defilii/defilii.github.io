@@ -6,6 +6,8 @@ let config = {
 var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -5,
+    zoomDelta: 0.10,
+    zoomSnap: 0
 });
 var svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -102,14 +104,17 @@ svgElement.innerHTML =
 
 var bounds = [[0, 0], [1000, 1000]];
 var boundsT = [[400, 0], [1000, 600]];
+
+var image = L.imageOverlay('icons/Background low contrast.jpg', bounds).addTo(map);
+var image = L.imageOverlay('icons/Trimisteguros zone of alineation/Trimisteguros zone.png', boundsT).addTo(map);
+var image = L.imageOverlay('icons/Polivian Yellow Delta outer frame.png', bounds).addTo(map);
 var svgOverlay = L.svgOverlay(svgElement, bounds, {
     opacity: 0.8,
     interactive: true
 }).addTo(map);
-var image = L.imageOverlay('icons/Background low contrast.jpg', bounds).addTo(map);
-var image = L.imageOverlay('icons/Trimisteguros zone of alineation/Trimisteguros zone.png', boundsT).addTo(map);
-map.fitBounds(bounds);
 
+map.fitBounds(bounds);
+// map.fitWorld();
 
 //disables panning outside map
 map.on('drag', function () {
@@ -117,7 +122,7 @@ map.on('drag', function () {
 });
 
 //shows full map on first load
-map.setView([500, 500], 0);
+// map.setView([500, 500], 0);
 
 
 //function that interacts with html elements to change
@@ -144,19 +149,19 @@ var LargerIcon = L.Icon.extend({
 
 var evenLargerIcon = L.Icon.extend({
     options: {
-        iconSize: [200, 200],
+        iconSize: [180, 180],
     }
 });
 var pointOfInterest = new mediumIcon({iconUrl:'icons/Interactive Point of interest icon.svg'})
-var achachi = new mediumIcon({iconUrl:'icons/Town icons/achacachi.svg'})
-var apolo = new mediumIcon({iconUrl:'icons/Town icons/apolo.svg'})
-var consata = new mediumIcon({iconUrl:'icons/Town icons/consata.svg'})
-var laja = new mediumIcon({iconUrl:'icons/Town icons/laja.svg'})
-var mecapaca = new mediumIcon({iconUrl:'icons/Town icons/mecapaca.svg'})
-var palca = new mediumIcon({iconUrl:'icons/Town icons/palca.svg'})
-var pongo = new mediumIcon({iconUrl:'icons/Town icons/pongo.svg'})
-var tipuani = new mediumIcon({iconUrl:'icons/Town icons/tipuani.svg'})
-var viacha = new mediumIcon({iconUrl:'icons/Town icons/viacha.svg'})
+var achachi = new mediumIcon({iconUrl:'icons/Town icons/ACHACACHI.svg'})
+var apolo = new mediumIcon({iconUrl:'icons/Town icons/APOLO.svg'})
+var consata = new mediumIcon({iconUrl:'icons/Town icons/CONSATA.svg'})
+var laja = new mediumIcon({iconUrl:'icons/Town icons/LAJA.svg'})
+var mecapaca = new mediumIcon({iconUrl:'icons/Town icons/MECAPACA.svg'})
+var palca = new mediumIcon({iconUrl:'icons/Town icons/PALCA.svg'})
+var pongo = new mediumIcon({iconUrl:'icons/Town icons/PONGO.svg'})
+var tipuani = new mediumIcon({iconUrl:'icons/Town icons/TIPUANI.svg'})
+var viacha = new mediumIcon({iconUrl:'icons/Town icons/VIACHA.svg'})
 
 var busStop = new mediumIcon({iconUrl:'icons/Static points of interest/BUS STOP.svg'})
 var mines = new mediumIcon({iconUrl:'icons/Static points of interest/MINES.svg'})
@@ -168,6 +173,20 @@ var armoredOpsFB = new LargerIcon({iconUrl:'icons/Bases/ARMORED OPS FORWARD BASE
 var occultOpsHC = new LargerIcon({iconUrl:'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
 var polivian301HQ = new LargerIcon({iconUrl:'icons/Bases/POLIVIAN 301 HQ.svg'})
 
+var unknown = new smallIcon({iconUrl:'icons/Characters/UNKNOWN.svg'})
+var aurora = new smallIcon({iconUrl:'icons/Characters/AURORA.svg'})
+var butcher = new smallIcon({iconUrl:'icons/Characters/BUTCHER.svg'})
+var coco = new smallIcon({iconUrl:'icons/Characters/COCO.svg'})
+var fulgora = new smallIcon({iconUrl:'icons/Characters/FULGORA.svg'})
+var gungirl = new smallIcon({iconUrl:'icons/Characters/GUN GIRL.svg'})
+var helmetgirl = new smallIcon({iconUrl:'icons/Characters/HELMET GIRL.svg'})
+var knifegirl = new smallIcon({iconUrl:'icons/Characters/KNIFE GIRL.svg'})
+var lumina = new smallIcon({iconUrl:'icons/Characters/LUMINA.svg'})
+var meteora = new smallIcon({iconUrl:'icons/Characters/METEORA.svg'})
+var panzerfaustina = new smallIcon({iconUrl:'icons/Characters/PANZERFAUSTINA.svg'})
+var romina = new smallIcon({iconUrl:'icons/Characters/ROMINA.svg'})
+
+
 var mountainNorth = new evenLargerIcon({iconUrl:'icons/Biomes/MOUNTAIN NORTH.svg'})
 var plateauWall = new evenLargerIcon({iconUrl:'icons/Biomes/PLATEAU WALL.svg'})
 var polivianDesert = new evenLargerIcon({iconUrl:'icons/Biomes/POLIVIAN DESERT.svg'})
@@ -176,6 +195,22 @@ var tropicalSouth = new evenLargerIcon({iconUrl:'icons/Biomes/TROPICAL SOUTH.svg
 
 
 //markers
+var unknownMarker = L.marker([721, 274], {icon: unknown}).addTo(map);
+var unknownMarker1 = L.marker([869, 327], {icon: unknown}).addTo(map);
+var unknownMarker2 = L.marker([712, 387], {icon: unknown}).addTo(map);
+var unknownMarker3 = L.marker([618, 271], {icon: unknown}).addTo(map);
+var auroraMarker = L.marker([232, 588], {icon: aurora}).addTo(map);
+var butcherMarker = L.marker([315, 370], {icon: butcher}).addTo(map);
+var cocoMarker = L.marker([133, 400], {icon: coco}).addTo(map);
+var fulgoraMarker = L.marker([531, 738], {icon: fulgora}).addTo(map);
+var gungirlMarker = L.marker([312, 740], {icon: gungirl}).addTo(map);
+var helmetgirlMarker = L.marker([312, 790], {icon: helmetgirl}).addTo(map);
+var knifegirlMarker = L.marker([312, 690], {icon: knifegirl}).addTo(map);
+var luminaMarker = L.marker([450, 187], {icon: lumina}).addTo(map);
+var meteoraMarker = L.marker([900, 770], {icon: meteora}).addTo(map);
+var panzerfaustinaMarker = L.marker([748, 722], {icon: panzerfaustina}).addTo(map);
+var rominaMarker = L.marker([262, 588], {icon: romina}).addTo(map);
+
 var achachiMarker = L.marker([750, 540], {icon: achachi}).addTo(map);
 var viachaMarker = L.marker([810, 710], {icon: viacha}).addTo(map);
 var apoloMarker = L.marker([100, 400], {icon: apolo}).addTo(map);
@@ -188,7 +223,7 @@ var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
 
 var busStopMarker = L.marker([100, 940], {icon: busStop}).addTo(map);
 var minesMarker = L.marker([160, 50], {icon: mines}).addTo(map);
-var launchSiteMarker = L.marker([720, 270], {icon: launchSite}).addTo(map);
+var launchSiteMarker = L.marker([750, 310], {icon: launchSite}).addTo(map);
 var moonValleyMarker = L.marker([650, 850], {icon: moonValley}).addTo(map);
 var troutFarmMarker = L.marker([300, 610], {icon: troutFarm}).addTo(map);
 
@@ -202,9 +237,17 @@ var polivianDesertMarker = L.marker([600, 700], {icon: polivianDesert}).addTo(ma
 var trimistegurosMarker = L.marker([810, 100], {icon: trimisteguros}).addTo(map);
 var tropicalSouthMarker = L.marker([150, 300], {icon: tropicalSouth}).addTo(map);
 
+
+
 //adds function on click of a marker
 achachiMarker.on('click', function (e) {
     myFunction("you clicked");
 });
 
+//function that reveals coordinate of where you clicked, useful for not going insane
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
 
