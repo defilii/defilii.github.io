@@ -102,8 +102,14 @@ svgElement.innerHTML =
     '<rect x="200" y="0" width="0.5" height="400" class="st1"/>';
 
 
-var bounds = [[0, 0], [1000, 1000]];
-var boundsT = [[430, 0], [1000, 580]];
+var bounds = [
+    [0, 0],
+    [1000, 1000]
+];
+var boundsT = [
+    [430, 0],
+    [1000, 580]
+];
 
 var image = L.imageOverlay('icons/Background low contrast.jpg', bounds).addTo(map);
 var image = L.imageOverlay('icons/Trimisteguros zone of alineation/Trimisteguros zone.png', boundsT).addTo(map);
@@ -116,8 +122,8 @@ var svgOverlay = L.svgOverlay(svgElement, bounds, {
 map.fitBounds(bounds);
 
 //disables panning outside map
-map.on('drag', function () {
-    map.panInsideBounds(bounds, {animate: false});
+map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
 });
 
 
@@ -154,99 +160,99 @@ var evenLargerIcon = L.Icon.extend({
 });
 
 
-var pointOfInterest = new mediumIcon({iconUrl: 'icons/poi.svg'})
+var pointOfInterest = new mediumIcon({ iconUrl: 'icons/poi.svg' })
 
-var achachi = new mediumIcon({iconUrl: 'icons/Town icons/ACHACACHI.svg'})
-var apolo = new mediumIcon({iconUrl: 'icons/Town icons/APOLO.svg'})
-var consata = new mediumIcon({iconUrl: 'icons/Town icons/CONSATA.svg'})
-var laja = new mediumIcon({iconUrl: 'icons/Town icons/LAJA.svg'})
-var mecapaca = new mediumIcon({iconUrl: 'icons/Town icons/MECAPACA.svg'})
-var palca = new mediumIcon({iconUrl: 'icons/Town icons/PALCA.svg'})
-var pongo = new mediumIcon({iconUrl: 'icons/Town icons/PONGO.svg'})
-var tipuani = new mediumIcon({iconUrl: 'icons/Town icons/TIPUANI.svg'})
-var viacha = new mediumIcon({iconUrl: 'icons/Town icons/VIACHA.svg'})
+var achachi = new mediumIcon({ iconUrl: 'icons/Town icons/ACHACACHI.svg' })
+var apolo = new mediumIcon({ iconUrl: 'icons/Town icons/APOLO.svg' })
+var consata = new mediumIcon({ iconUrl: 'icons/Town icons/CONSATA.svg' })
+var laja = new mediumIcon({ iconUrl: 'icons/Town icons/LAJA.svg' })
+var mecapaca = new mediumIcon({ iconUrl: 'icons/Town icons/MECAPACA.svg' })
+var palca = new mediumIcon({ iconUrl: 'icons/Town icons/PALCA.svg' })
+var pongo = new mediumIcon({ iconUrl: 'icons/Town icons/PONGO.svg' })
+var tipuani = new mediumIcon({ iconUrl: 'icons/Town icons/TIPUANI.svg' })
+var viacha = new mediumIcon({ iconUrl: 'icons/Town icons/VIACHA.svg' })
 
-var busStop = new mediumIcon({iconUrl: 'icons/Static points of interest/BUS STOP.svg'})
-var mines = new mediumIcon({iconUrl: 'icons/Static points of interest/MINES.svg'})
-var launchSite = new mediumIcon({iconUrl: 'icons/Static points of interest/LAUNCH SITE.svg'})
-var moonValley = new mediumIcon({iconUrl: 'icons/Static points of interest/MOON VALLEY.svg'})
-var troutFarm = new mediumIcon({iconUrl: 'icons/Static points of interest/TROUT FARM.svg'})
+var busStop = new mediumIcon({ iconUrl: 'icons/Static points of interest/BUS STOP.svg' })
+var mines = new mediumIcon({ iconUrl: 'icons/Static points of interest/MINES.svg' })
+var launchSite = new mediumIcon({ iconUrl: 'icons/Static points of interest/LAUNCH SITE.svg' })
+var moonValley = new mediumIcon({ iconUrl: 'icons/Static points of interest/MOON VALLEY.svg' })
+var troutFarm = new mediumIcon({ iconUrl: 'icons/Static points of interest/TROUT FARM.svg' })
 
-var armoredOpsFB = new LargerIcon({iconUrl: 'icons/Bases/ARMORED OPS FORWARD BASE.svg'})
-var occultOpsHC = new LargerIcon({iconUrl: 'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
-var polivian301HQ = new LargerIcon({iconUrl: 'icons/Bases/POLIVIAN 301 HQ.svg'})
+var armoredOpsFB = new LargerIcon({ iconUrl: 'icons/Bases/ARMORED OPS FORWARD BASE.svg' })
+var occultOpsHC = new LargerIcon({ iconUrl: 'icons/Bases/OCCLT OPS HIDDEN CELL.svg' })
+var polivian301HQ = new LargerIcon({ iconUrl: 'icons/Bases/POLIVIAN 301 HQ.svg' })
 
-var unknown = new smallIcon({iconUrl: 'icons/Characters/UNKNOWN.svg'})
-var aurora = new smallIcon({iconUrl: 'icons/Characters/AURORA.svg'})
-var butcher = new smallIcon({iconUrl: 'icons/Characters/BUTCHER.svg'})
-var coco = new smallIcon({iconUrl: 'icons/Characters/COCO.svg'})
-var fulgora = new smallIcon({iconUrl: 'icons/Characters/FULGORA.svg'})
-var gungirl = new smallIcon({iconUrl: 'icons/Characters/GUN GIRL.svg'})
-var helmetgirl = new smallIcon({iconUrl: 'icons/Characters/HELMET GIRL.svg'})
-var knifegirl = new smallIcon({iconUrl: 'icons/Characters/KNIFE GIRL.svg'})
-var lumina = new smallIcon({iconUrl: 'icons/Characters/LUMINA.svg'})
-var meteora = new smallIcon({iconUrl: 'icons/Characters/METEORA.svg'})
-var panzerfaustina = new smallIcon({iconUrl: 'icons/Characters/PANZERFAUSTINA.svg'})
-var romina = new smallIcon({iconUrl: 'icons/Characters/ROMINA.svg'})
+var unknown = new smallIcon({ iconUrl: 'icons/Characters/UNKNOWN.svg' })
+var aurora = new smallIcon({ iconUrl: 'icons/Characters/AURORA.svg' })
+var butcher = new smallIcon({ iconUrl: 'icons/Characters/BUTCHER.svg' })
+var coco = new smallIcon({ iconUrl: 'icons/Characters/COCO.svg' })
+var fulgora = new smallIcon({ iconUrl: 'icons/Characters/FULGORA.svg' })
+var gungirl = new smallIcon({ iconUrl: 'icons/Characters/GUN GIRL.svg' })
+var helmetgirl = new smallIcon({ iconUrl: 'icons/Characters/HELMET GIRL.svg' })
+var knifegirl = new smallIcon({ iconUrl: 'icons/Characters/KNIFE GIRL.svg' })
+var lumina = new smallIcon({ iconUrl: 'icons/Characters/LUMINA.svg' })
+var meteora = new smallIcon({ iconUrl: 'icons/Characters/METEORA.svg' })
+var panzerfaustina = new smallIcon({ iconUrl: 'icons/Characters/PANZERFAUSTINA.svg' })
+var romina = new smallIcon({ iconUrl: 'icons/Characters/ROMINA.svg' })
 
 
-var mountainNorth = new evenLargerIcon({iconUrl: 'icons/Biomes/MOUNTAIN NORTH.svg'})
-var plateauWall = new evenLargerIcon({iconUrl: 'icons/Biomes/PLATEAU WALL.svg'})
-var polivianDesert = new evenLargerIcon({iconUrl: 'icons/Biomes/POLIVIAN DESERT.svg'})
-var trimisteguros = new evenLargerIcon({iconUrl: 'icons/Biomes/TRIMISTEGUROS.svg'})
-var tropicalSouth = new evenLargerIcon({iconUrl: 'icons/Biomes/TROPICAL SOUTH.svg'})
+var mountainNorth = new evenLargerIcon({ iconUrl: 'icons/Biomes/MOUNTAIN NORTH.svg' })
+var plateauWall = new evenLargerIcon({ iconUrl: 'icons/Biomes/PLATEAU WALL.svg' })
+var polivianDesert = new evenLargerIcon({ iconUrl: 'icons/Biomes/POLIVIAN DESERT.svg' })
+var trimisteguros = new evenLargerIcon({ iconUrl: 'icons/Biomes/TRIMISTEGUROS.svg' })
+var tropicalSouth = new evenLargerIcon({ iconUrl: 'icons/Biomes/TROPICAL SOUTH.svg' })
 
 
 //markers
-var unknownMarker = L.marker([721, 274], {icon: unknown}).addTo(map);
-var unknownMarker1 = L.marker([869, 327], {icon: unknown}).addTo(map);
-var unknownMarker2 = L.marker([712, 387], {icon: unknown}).addTo(map);
-var unknownMarker3 = L.marker([618, 271], {icon: unknown}).addTo(map);
-var auroraMarker = L.marker([232, 588], {icon: aurora}).addTo(map);
-var butcherMarker = L.marker([315, 370], {icon: butcher}).addTo(map);
-var cocoMarker = L.marker([133, 400], {icon: coco}).addTo(map);
-var fulgoraMarker = L.marker([531, 738], {icon: fulgora}).addTo(map);
-var gungirlMarker = L.marker([312, 740], {icon: gungirl}).addTo(map);
-var helmetgirlMarker = L.marker([312, 790], {icon: helmetgirl}).addTo(map);
-var knifegirlMarker = L.marker([312, 690], {icon: knifegirl}).addTo(map);
-var luminaMarker = L.marker([450, 187], {icon: lumina}).addTo(map);
-var meteoraMarker = L.marker([900, 770], {icon: meteora}).addTo(map);
-var panzerfaustinaMarker = L.marker([748, 722], {icon: panzerfaustina}).addTo(map);
-var rominaMarker = L.marker([262, 588], {icon: romina}).addTo(map);
+var unknownMarker = L.marker([721, 274], { icon: unknown }).addTo(map);
+var unknownMarker1 = L.marker([869, 327], { icon: unknown }).addTo(map);
+var unknownMarker2 = L.marker([712, 387], { icon: unknown }).addTo(map);
+var unknownMarker3 = L.marker([618, 271], { icon: unknown }).addTo(map);
+var auroraMarker = L.marker([232, 588], { icon: aurora }).addTo(map);
+var butcherMarker = L.marker([315, 370], { icon: butcher }).addTo(map);
+var cocoMarker = L.marker([133, 400], { icon: coco }).addTo(map);
+var fulgoraMarker = L.marker([531, 738], { icon: fulgora }).addTo(map);
+var gungirlMarker = L.marker([312, 740], { icon: gungirl }).addTo(map);
+var helmetgirlMarker = L.marker([312, 790], { icon: helmetgirl }).addTo(map);
+var knifegirlMarker = L.marker([312, 690], { icon: knifegirl }).addTo(map);
+var luminaMarker = L.marker([450, 187], { icon: lumina }).addTo(map);
+var meteoraMarker = L.marker([900, 770], { icon: meteora }).addTo(map);
+var panzerfaustinaMarker = L.marker([748, 722], { icon: panzerfaustina }).addTo(map);
+var rominaMarker = L.marker([262, 588], { icon: romina }).addTo(map);
 
-var achachiMarker = L.marker([750, 540], {icon: achachi}).addTo(map);
-var viachaMarker = L.marker([810, 710], {icon: viacha}).addTo(map);
-var apoloMarker = L.marker([100, 400], {icon: apolo}).addTo(map);
-var consataMarker = L.marker([280, 370], {icon: consata}).addTo(map);
-var lajaMarker = L.marker([420, 610], {icon: laja}).addTo(map);
-var mecapacaMarker = L.marker([345, 740], {icon: mecapaca}).addTo(map);
-var palcaMarker = L.marker([450, 840], {icon: palca}).addTo(map);
-var pongoMarker = L.marker([330, 580], {icon: pongo}).addTo(map);
-var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
+var achachiMarker = L.marker([750, 540], { icon: achachi }).addTo(map);
+var viachaMarker = L.marker([810, 710], { icon: viacha }).addTo(map);
+var apoloMarker = L.marker([100, 400], { icon: apolo }).addTo(map);
+var consataMarker = L.marker([280, 370], { icon: consata }).addTo(map);
+var lajaMarker = L.marker([420, 610], { icon: laja }).addTo(map);
+var mecapacaMarker = L.marker([345, 740], { icon: mecapaca }).addTo(map);
+var palcaMarker = L.marker([450, 840], { icon: palca }).addTo(map);
+var pongoMarker = L.marker([330, 580], { icon: pongo }).addTo(map);
+var tipuaniMarker = L.marker([60, 250], { icon: tipuani }).addTo(map);
 
-var busStopMarker = L.marker([100, 940], {icon: busStop}).addTo(map);
-var minesMarker = L.marker([160, 75], {icon: mines}).addTo(map);
-var launchSiteMarker = L.marker([750, 310], {icon: launchSite}).addTo(map);
-var moonValleyMarker = L.marker([650, 850], {icon: moonValley}).addTo(map);
-var troutFarmMarker = L.marker([300, 610], {icon: troutFarm}).addTo(map);
+var busStopMarker = L.marker([100, 940], { icon: busStop }).addTo(map);
+var minesMarker = L.marker([160, 75], { icon: mines }).addTo(map);
+var launchSiteMarker = L.marker([750, 310], { icon: launchSite }).addTo(map);
+var moonValleyMarker = L.marker([650, 850], { icon: moonValley }).addTo(map);
+var troutFarmMarker = L.marker([300, 610], { icon: troutFarm }).addTo(map);
 
-var armoredOpsFBMarker = L.marker([900, 880], {icon: armoredOpsFB}).addTo(map);
-var occultOpsHCMarker = L.marker([500, 760], {icon: occultOpsHC}).addTo(map);
-var polivian301HQMarker = L.marker([200, 600], {icon: polivian301HQ}).addTo(map);
+var armoredOpsFBMarker = L.marker([900, 880], { icon: armoredOpsFB }).addTo(map);
+var occultOpsHCMarker = L.marker([500, 760], { icon: occultOpsHC }).addTo(map);
+var polivian301HQMarker = L.marker([200, 600], { icon: polivian301HQ }).addTo(map);
 
-var mountainNorthMarker = L.marker([840, 750], {icon: mountainNorth}).addTo(map);
-var plateauWallMarker = L.marker([550, 450], {icon: plateauWall}).addTo(map);
-var polivianDesertMarker = L.marker([600, 700], {icon: polivianDesert}).addTo(map);
-var trimistegurosMarker = L.marker([810, 100], {icon: trimisteguros}).addTo(map);
-var tropicalSouthMarker = L.marker([150, 300], {icon: tropicalSouth}).addTo(map);
+var mountainNorthMarker = L.marker([840, 750], { icon: mountainNorth }).addTo(map);
+var plateauWallMarker = L.marker([550, 450], { icon: plateauWall }).addTo(map);
+var polivianDesertMarker = L.marker([600, 700], { icon: polivianDesert }).addTo(map);
+var trimistegurosMarker = L.marker([810, 100], { icon: trimisteguros }).addTo(map);
+var tropicalSouthMarker = L.marker([150, 300], { icon: tropicalSouth }).addTo(map);
 
 
 //adds function on click of a marker
-unknownMarker.on('click', function (e) {
+unknownMarker.on('click', function(e) {
     window.open("https://www.pixiv.net/en/artworks/109816309 ");
 });
 
-//function that reveals coordinate of where you clicked,
+// function that reveals coordinate of where you clicked,
 // useful for not going insane when wanting to add a new character specifically somewhere
 // remember to comment it back when you finish so users cant access it
 
@@ -255,4 +261,3 @@ unknownMarker.on('click', function (e) {
 // }
 //
 // map.on('click', onMapClick);
-
