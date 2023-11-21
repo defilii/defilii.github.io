@@ -101,11 +101,13 @@ svgElement.innerHTML =
 
 
 var bounds = [[0, 0], [1000, 1000]];
+var boundsT = [[400, 0], [1000, 600]];
 var svgOverlay = L.svgOverlay(svgElement, bounds, {
     opacity: 0.8,
     interactive: true
 }).addTo(map);
 var image = L.imageOverlay('icons/Background low contrast.jpg', bounds).addTo(map);
+var image = L.imageOverlay('icons/Trimisteguros zone of alineation/Trimisteguros zone.png', boundsT).addTo(map);
 map.fitBounds(bounds);
 
 
@@ -124,26 +126,47 @@ function myFunction(name) {
 }
 
 //custom icons for marker
-var pointOfInterest = L.icon({
-    iconUrl: 'icons/Interactive Point of interest icon.svg',
-    iconSize: [50, 50], // size of the icon
+var SmallIcon = L.Icon.extend({
+    options: {
+        iconSize: [90, 90],
+    }
 });
-var grid = L.icon({
-    iconUrl: 'icons/ACHACACHI.svg',
-    iconSize: [100, 100], // size of the icon
+var LargerIcon = L.Icon.extend({
+    options: {
+        iconSize: [140, 140],
+    }
 });
-var achachi = L.icon({
-    iconUrl: 'icons/ACHACACHI.svg',
-    iconSize: [100, 100], // size of the icon
-});
-var trimisteguros = L.icon({
-    iconUrl: 'icons/Trimisteguros zone of alineation/Trimisteguros zone.svg',
-    iconSize: [500, 500], // size of the icon
-});
+var pointOfInterest = new SmallIcon({iconUrl:'icons/Interactive Point of interest icon.svg'})
+var achachi = new SmallIcon({iconUrl:'icons/Town icons/achacachi.svg'})
+var apolo = new SmallIcon({iconUrl:'icons/Town icons/apolo.svg'})
+var consata = new SmallIcon({iconUrl:'icons/Town icons/consata.svg'})
+var laja = new SmallIcon({iconUrl:'icons/Town icons/laja.svg'})
+var mecapaca = new SmallIcon({iconUrl:'icons/Town icons/mecapaca.svg'})
+var palca = new SmallIcon({iconUrl:'icons/Town icons/palca.svg'})
+var pongo = new SmallIcon({iconUrl:'icons/Town icons/pongo.svg'})
+var tipuani = new SmallIcon({iconUrl:'icons/Town icons/tipuani.svg'})
+var viacha = new SmallIcon({iconUrl:'icons/Town icons/viacha.svg'})
+
+
+var armoredOpsFB = new LargerIcon({iconUrl:'icons/Bases/ARMORED OPS FORWARD BASE.svg'})
+var occultOpsHC = new LargerIcon({iconUrl:'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
+var polivian301HQ = new LargerIcon({iconUrl:'icons/Bases/POLIVIAN 301 HQ.svg'})
+
 
 //markers
-var achachiMarker = L.marker([700, 500], {icon: achachi}).addTo(map);
-var trimistegurosMarker = L.marker([720, 280], {icon: trimisteguros}).addTo(map);
+var achachiMarker = L.marker([750, 540], {icon: achachi}).addTo(map);
+var viachaMarker = L.marker([810, 710], {icon: viacha}).addTo(map);
+var apoloMarker = L.marker([100, 400], {icon: apolo}).addTo(map);
+var consataMarker = L.marker([280, 370], {icon: consata}).addTo(map);
+var lajaMarker = L.marker([420, 610], {icon: laja}).addTo(map);
+var mecapacaMarker = L.marker([345, 740], {icon: mecapaca}).addTo(map);
+var palcaMarker = L.marker([450, 840], {icon: palca}).addTo(map);
+var pongoMarker = L.marker([330, 580], {icon: pongo}).addTo(map);
+var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
+
+var armoredOpsFBMarker = L.marker([900, 880], {icon: armoredOpsFB}).addTo(map);
+var occultOpsHCMarker = L.marker([500, 760], {icon: occultOpsHC}).addTo(map);
+var polivian301HQMarker = L.marker([200, 600], {icon: polivian301HQ}).addTo(map);
 
 //adds function on click of a marker
 achachiMarker.on('click', function (e) {
