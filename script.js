@@ -126,7 +126,12 @@ function myFunction(name) {
 }
 
 //custom icons for marker
-var SmallIcon = L.Icon.extend({
+var smallIcon = L.Icon.extend({
+    options: {
+        iconSize: [50, 50],
+    }
+});
+var mediumIcon = L.Icon.extend({
     options: {
         iconSize: [90, 90],
     }
@@ -136,21 +141,38 @@ var LargerIcon = L.Icon.extend({
         iconSize: [140, 140],
     }
 });
-var pointOfInterest = new SmallIcon({iconUrl:'icons/Interactive Point of interest icon.svg'})
-var achachi = new SmallIcon({iconUrl:'icons/Town icons/achacachi.svg'})
-var apolo = new SmallIcon({iconUrl:'icons/Town icons/apolo.svg'})
-var consata = new SmallIcon({iconUrl:'icons/Town icons/consata.svg'})
-var laja = new SmallIcon({iconUrl:'icons/Town icons/laja.svg'})
-var mecapaca = new SmallIcon({iconUrl:'icons/Town icons/mecapaca.svg'})
-var palca = new SmallIcon({iconUrl:'icons/Town icons/palca.svg'})
-var pongo = new SmallIcon({iconUrl:'icons/Town icons/pongo.svg'})
-var tipuani = new SmallIcon({iconUrl:'icons/Town icons/tipuani.svg'})
-var viacha = new SmallIcon({iconUrl:'icons/Town icons/viacha.svg'})
 
+var evenLargerIcon = L.Icon.extend({
+    options: {
+        iconSize: [200, 200],
+    }
+});
+var pointOfInterest = new mediumIcon({iconUrl:'icons/Interactive Point of interest icon.svg'})
+var achachi = new mediumIcon({iconUrl:'icons/Town icons/achacachi.svg'})
+var apolo = new mediumIcon({iconUrl:'icons/Town icons/apolo.svg'})
+var consata = new mediumIcon({iconUrl:'icons/Town icons/consata.svg'})
+var laja = new mediumIcon({iconUrl:'icons/Town icons/laja.svg'})
+var mecapaca = new mediumIcon({iconUrl:'icons/Town icons/mecapaca.svg'})
+var palca = new mediumIcon({iconUrl:'icons/Town icons/palca.svg'})
+var pongo = new mediumIcon({iconUrl:'icons/Town icons/pongo.svg'})
+var tipuani = new mediumIcon({iconUrl:'icons/Town icons/tipuani.svg'})
+var viacha = new mediumIcon({iconUrl:'icons/Town icons/viacha.svg'})
+
+var busStop = new mediumIcon({iconUrl:'icons/Static points of interest/BUS STOP.svg'})
+var mines = new mediumIcon({iconUrl:'icons/Static points of interest/MINES.svg'})
+var launchSite = new mediumIcon({iconUrl:'icons/Static points of interest/LAUNCH SITE.svg'})
+var moonValley = new mediumIcon({iconUrl:'icons/Static points of interest/MOON VALLEY.svg'})
+var troutFarm = new mediumIcon({iconUrl:'icons/Static points of interest/TROUT FARM.svg'})
 
 var armoredOpsFB = new LargerIcon({iconUrl:'icons/Bases/ARMORED OPS FORWARD BASE.svg'})
 var occultOpsHC = new LargerIcon({iconUrl:'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
 var polivian301HQ = new LargerIcon({iconUrl:'icons/Bases/POLIVIAN 301 HQ.svg'})
+
+var mountainNorth = new evenLargerIcon({iconUrl:'icons/Biomes/MOUNTAIN NORTH.svg'})
+var plateauWall = new evenLargerIcon({iconUrl:'icons/Biomes/PLATEAU WALL.svg'})
+var polivianDesert = new evenLargerIcon({iconUrl:'icons/Biomes/POLIVIAN DESERT.svg'})
+var trimisteguros = new evenLargerIcon({iconUrl:'icons/Biomes/TRIMISTEGUROS.svg'})
+var tropicalSouth = new evenLargerIcon({iconUrl:'icons/Biomes/TROPICAL SOUTH.svg'})
 
 
 //markers
@@ -164,9 +186,21 @@ var palcaMarker = L.marker([450, 840], {icon: palca}).addTo(map);
 var pongoMarker = L.marker([330, 580], {icon: pongo}).addTo(map);
 var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
 
+var busStopMarker = L.marker([100, 940], {icon: busStop}).addTo(map);
+var minesMarker = L.marker([160, 50], {icon: mines}).addTo(map);
+var launchSiteMarker = L.marker([720, 270], {icon: launchSite}).addTo(map);
+var moonValleyMarker = L.marker([650, 850], {icon: moonValley}).addTo(map);
+var troutFarmMarker = L.marker([300, 610], {icon: troutFarm}).addTo(map);
+
 var armoredOpsFBMarker = L.marker([900, 880], {icon: armoredOpsFB}).addTo(map);
 var occultOpsHCMarker = L.marker([500, 760], {icon: occultOpsHC}).addTo(map);
 var polivian301HQMarker = L.marker([200, 600], {icon: polivian301HQ}).addTo(map);
+
+var mountainNorthMarker = L.marker([840, 750], {icon: mountainNorth}).addTo(map);
+var plateauWallMarker = L.marker([550, 450], {icon: plateauWall}).addTo(map);
+var polivianDesertMarker = L.marker([600, 700], {icon: polivianDesert}).addTo(map);
+var trimistegurosMarker = L.marker([810, 100], {icon: trimisteguros}).addTo(map);
+var tropicalSouthMarker = L.marker([150, 300], {icon: tropicalSouth}).addTo(map);
 
 //adds function on click of a marker
 achachiMarker.on('click', function (e) {
