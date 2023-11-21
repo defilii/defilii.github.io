@@ -139,7 +139,7 @@ function myFunction(name) {
 // to specify the link
 var smallIcon = L.Icon.extend({
     options: {
-        iconSize: [50, 50],
+        iconSize: [70, 70],
     }
 });
 var mediumIcon = L.Icon.extend({

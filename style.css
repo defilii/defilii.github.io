@@ -12,21 +12,25 @@ html {
 
 body,
 html,
-
     #map {
         margin-top: 1vh;
-        margin-left: 5vw;
-        margin-right: 5vw;
         width: 90vh;
         height: 90vh;
     }
-
+@media screen and (min-width: 720px) {
+    #map {
+        margin-top: 1vh;
+        margin-left: calc((100vw / 2) - (90vh / 2));
+        /*margin-right:  calc((100vw - 70vh) / 4);*/
+        width: 90vh;
+        height: 90vh;
+    }
+}
 @media screen and (max-width: 720px) {
     #map {
-
         margin-top: 0vh;
-        margin-left: -5vw;
-        margin-right: -5vw;
+        /*margin-left: 5vw;*/
+        /*margin-right: -10vw;*/
         width: 100vw;
         height: 100vw;
     }
