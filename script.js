@@ -6,7 +6,7 @@ let config = {
 var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -5,
-    zoomDelta: 0.10,
+    zoomDelta: 0.25,
     zoomSnap: 0
 });
 var svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -103,7 +103,7 @@ svgElement.innerHTML =
 
 
 var bounds = [[0, 0], [1000, 1000]];
-var boundsT = [[400, 0], [1000, 600]];
+var boundsT = [[430, 0], [1000, 580]];
 
 var image = L.imageOverlay('icons/Background low contrast.jpg', bounds).addTo(map);
 var image = L.imageOverlay('icons/Trimisteguros zone of alineation/Trimisteguros zone.png', boundsT).addTo(map);
@@ -114,15 +114,12 @@ var svgOverlay = L.svgOverlay(svgElement, bounds, {
 }).addTo(map);
 
 map.fitBounds(bounds);
-// map.fitWorld();
 
 //disables panning outside map
 map.on('drag', function () {
     map.panInsideBounds(bounds, {animate: false});
 });
 
-//shows full map on first load
-// map.setView([500, 500], 0);
 
 
 //function that interacts with html elements to change
@@ -131,6 +128,9 @@ function myFunction(name) {
 }
 
 //custom icons for marker
+
+//classes, basically blueprints so you dont have to type everytime the size and just need
+// to specify the link
 var smallIcon = L.Icon.extend({
     options: {
         iconSize: [50, 50],
@@ -152,46 +152,49 @@ var evenLargerIcon = L.Icon.extend({
         iconSize: [180, 180],
     }
 });
-var pointOfInterest = new mediumIcon({iconUrl:'icons/Interactive Point of interest icon.svg'})
-var achachi = new mediumIcon({iconUrl:'icons/Town icons/ACHACACHI.svg'})
-var apolo = new mediumIcon({iconUrl:'icons/Town icons/APOLO.svg'})
-var consata = new mediumIcon({iconUrl:'icons/Town icons/CONSATA.svg'})
-var laja = new mediumIcon({iconUrl:'icons/Town icons/LAJA.svg'})
-var mecapaca = new mediumIcon({iconUrl:'icons/Town icons/MECAPACA.svg'})
-var palca = new mediumIcon({iconUrl:'icons/Town icons/PALCA.svg'})
-var pongo = new mediumIcon({iconUrl:'icons/Town icons/PONGO.svg'})
-var tipuani = new mediumIcon({iconUrl:'icons/Town icons/TIPUANI.svg'})
-var viacha = new mediumIcon({iconUrl:'icons/Town icons/VIACHA.svg'})
-
-var busStop = new mediumIcon({iconUrl:'icons/Static points of interest/BUS STOP.svg'})
-var mines = new mediumIcon({iconUrl:'icons/Static points of interest/MINES.svg'})
-var launchSite = new mediumIcon({iconUrl:'icons/Static points of interest/LAUNCH SITE.svg'})
-var moonValley = new mediumIcon({iconUrl:'icons/Static points of interest/MOON VALLEY.svg'})
-var troutFarm = new mediumIcon({iconUrl:'icons/Static points of interest/TROUT FARM.svg'})
-
-var armoredOpsFB = new LargerIcon({iconUrl:'icons/Bases/ARMORED OPS FORWARD BASE.svg'})
-var occultOpsHC = new LargerIcon({iconUrl:'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
-var polivian301HQ = new LargerIcon({iconUrl:'icons/Bases/POLIVIAN 301 HQ.svg'})
-
-var unknown = new smallIcon({iconUrl:'icons/Characters/UNKNOWN.svg'})
-var aurora = new smallIcon({iconUrl:'icons/Characters/AURORA.svg'})
-var butcher = new smallIcon({iconUrl:'icons/Characters/BUTCHER.svg'})
-var coco = new smallIcon({iconUrl:'icons/Characters/COCO.svg'})
-var fulgora = new smallIcon({iconUrl:'icons/Characters/FULGORA.svg'})
-var gungirl = new smallIcon({iconUrl:'icons/Characters/GUN GIRL.svg'})
-var helmetgirl = new smallIcon({iconUrl:'icons/Characters/HELMET GIRL.svg'})
-var knifegirl = new smallIcon({iconUrl:'icons/Characters/KNIFE GIRL.svg'})
-var lumina = new smallIcon({iconUrl:'icons/Characters/LUMINA.svg'})
-var meteora = new smallIcon({iconUrl:'icons/Characters/METEORA.svg'})
-var panzerfaustina = new smallIcon({iconUrl:'icons/Characters/PANZERFAUSTINA.svg'})
-var romina = new smallIcon({iconUrl:'icons/Characters/ROMINA.svg'})
 
 
-var mountainNorth = new evenLargerIcon({iconUrl:'icons/Biomes/MOUNTAIN NORTH.svg'})
-var plateauWall = new evenLargerIcon({iconUrl:'icons/Biomes/PLATEAU WALL.svg'})
-var polivianDesert = new evenLargerIcon({iconUrl:'icons/Biomes/POLIVIAN DESERT.svg'})
-var trimisteguros = new evenLargerIcon({iconUrl:'icons/Biomes/TRIMISTEGUROS.svg'})
-var tropicalSouth = new evenLargerIcon({iconUrl:'icons/Biomes/TROPICAL SOUTH.svg'})
+var pointOfInterest = new mediumIcon({iconUrl: 'icons/poi.svg'})
+
+var achachi = new mediumIcon({iconUrl: 'icons/Town icons/ACHACACHI.svg'})
+var apolo = new mediumIcon({iconUrl: 'icons/Town icons/APOLO.svg'})
+var consata = new mediumIcon({iconUrl: 'icons/Town icons/CONSATA.svg'})
+var laja = new mediumIcon({iconUrl: 'icons/Town icons/LAJA.svg'})
+var mecapaca = new mediumIcon({iconUrl: 'icons/Town icons/MECAPACA.svg'})
+var palca = new mediumIcon({iconUrl: 'icons/Town icons/PALCA.svg'})
+var pongo = new mediumIcon({iconUrl: 'icons/Town icons/PONGO.svg'})
+var tipuani = new mediumIcon({iconUrl: 'icons/Town icons/TIPUANI.svg'})
+var viacha = new mediumIcon({iconUrl: 'icons/Town icons/VIACHA.svg'})
+
+var busStop = new mediumIcon({iconUrl: 'icons/Static points of interest/BUS STOP.svg'})
+var mines = new mediumIcon({iconUrl: 'icons/Static points of interest/MINES.svg'})
+var launchSite = new mediumIcon({iconUrl: 'icons/Static points of interest/LAUNCH SITE.svg'})
+var moonValley = new mediumIcon({iconUrl: 'icons/Static points of interest/MOON VALLEY.svg'})
+var troutFarm = new mediumIcon({iconUrl: 'icons/Static points of interest/TROUT FARM.svg'})
+
+var armoredOpsFB = new LargerIcon({iconUrl: 'icons/Bases/ARMORED OPS FORWARD BASE.svg'})
+var occultOpsHC = new LargerIcon({iconUrl: 'icons/Bases/OCCLT OPS HIDDEN CELL.svg'})
+var polivian301HQ = new LargerIcon({iconUrl: 'icons/Bases/POLIVIAN 301 HQ.svg'})
+
+var unknown = new smallIcon({iconUrl: 'icons/Characters/UNKNOWN.svg'})
+var aurora = new smallIcon({iconUrl: 'icons/Characters/AURORA.svg'})
+var butcher = new smallIcon({iconUrl: 'icons/Characters/BUTCHER.svg'})
+var coco = new smallIcon({iconUrl: 'icons/Characters/COCO.svg'})
+var fulgora = new smallIcon({iconUrl: 'icons/Characters/FULGORA.svg'})
+var gungirl = new smallIcon({iconUrl: 'icons/Characters/GUN GIRL.svg'})
+var helmetgirl = new smallIcon({iconUrl: 'icons/Characters/HELMET GIRL.svg'})
+var knifegirl = new smallIcon({iconUrl: 'icons/Characters/KNIFE GIRL.svg'})
+var lumina = new smallIcon({iconUrl: 'icons/Characters/LUMINA.svg'})
+var meteora = new smallIcon({iconUrl: 'icons/Characters/METEORA.svg'})
+var panzerfaustina = new smallIcon({iconUrl: 'icons/Characters/PANZERFAUSTINA.svg'})
+var romina = new smallIcon({iconUrl: 'icons/Characters/ROMINA.svg'})
+
+
+var mountainNorth = new evenLargerIcon({iconUrl: 'icons/Biomes/MOUNTAIN NORTH.svg'})
+var plateauWall = new evenLargerIcon({iconUrl: 'icons/Biomes/PLATEAU WALL.svg'})
+var polivianDesert = new evenLargerIcon({iconUrl: 'icons/Biomes/POLIVIAN DESERT.svg'})
+var trimisteguros = new evenLargerIcon({iconUrl: 'icons/Biomes/TRIMISTEGUROS.svg'})
+var tropicalSouth = new evenLargerIcon({iconUrl: 'icons/Biomes/TROPICAL SOUTH.svg'})
 
 
 //markers
@@ -222,7 +225,7 @@ var pongoMarker = L.marker([330, 580], {icon: pongo}).addTo(map);
 var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
 
 var busStopMarker = L.marker([100, 940], {icon: busStop}).addTo(map);
-var minesMarker = L.marker([160, 50], {icon: mines}).addTo(map);
+var minesMarker = L.marker([160, 75], {icon: mines}).addTo(map);
 var launchSiteMarker = L.marker([750, 310], {icon: launchSite}).addTo(map);
 var moonValleyMarker = L.marker([650, 850], {icon: moonValley}).addTo(map);
 var troutFarmMarker = L.marker([300, 610], {icon: troutFarm}).addTo(map);
@@ -238,16 +241,18 @@ var trimistegurosMarker = L.marker([810, 100], {icon: trimisteguros}).addTo(map)
 var tropicalSouthMarker = L.marker([150, 300], {icon: tropicalSouth}).addTo(map);
 
 
-
 //adds function on click of a marker
-achachiMarker.on('click', function (e) {
-    myFunction("you clicked");
+unknownMarker.on('click', function (e) {
+    window.open("https://www.pixiv.net/en/artworks/109816309 ");
 });
 
-//function that reveals coordinate of where you clicked, useful for not going insane
-function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-}
+//function that reveals coordinate of where you clicked,
+// useful for not going insane when wanting to add a new character specifically somewhere
+// remember to comment it back when you finish so users cant access it
 
-map.on('click', onMapClick);
+// function onMapClick(e) {
+//     alert("You clicked the map at " + e.latlng);
+// }
+//
+// map.on('click', onMapClick);
 

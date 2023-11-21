@@ -13,24 +13,25 @@ html {
 body,
 html,
 #map {
+    width: 50%;
     width: 900px;
     height: 900px;
+}
+#container{
+    margin: 0 auto;
+    width:100%;
+    display: flex;
+    justify-content: center;
 
 }
-
 
 .normaldiv {
+
+    position: relative;
     border: 5px solid #F77B00;;
+
 }
 
-.imageOnTop {
-    position: absolute;
-    margin-top: -10px;
-    left: -10px;
-    border: 1px solid #000000;
-    width: 950px;
-    height:950px;
-}
 body {
     position: relative;
     min-height: 100%;
@@ -38,3 +39,7 @@ body {
     padding: 0;
     background-color: #f1f1f1;
 }
+
+a { position: relative; z-index: 1; }
+a span { display: inline-block; }
+a object { position: relative; z-index: -1; }
