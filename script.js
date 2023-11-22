@@ -236,7 +236,7 @@ var tipuaniMarker = L.marker([60, 250], {icon: tipuani}).addTo(map);
 
 var busStopMarker = L.marker([100, 940], {icon: busStop}).addTo(map);
 var minesMarker = L.marker([160, 75], {icon: mines}).addTo(map);
-var launchSiteMarker = L.marker([750, 310], {icon: launchSite}).addTo(map);
+var launchSiteMarker = L.marker([750, 270], {icon: launchSite}).addTo(map);
 var moonValleyMarker = L.marker([650, 850], {icon: moonValley}).addTo(map);
 var troutFarmMarker = L.marker([300, 610], {icon: troutFarm}).addTo(map);
 
@@ -281,7 +281,7 @@ poi24 = L.marker([450, 730], {icon: pointOfInterest});
 poi25 = L.marker([172, 517], {icon: pointOfInterest});
 poi26 = L.marker([419, 565], {icon: pointOfInterest});
 poi27 = L.marker([820, 594], {icon: pointOfInterest});
-poi28 = L.marker([774, 238], {icon: pointOfInterest});
+poi28 = L.marker([784, 228], {icon: pointOfInterest});
 poi29 = L.marker([349, 669], {icon: pointOfInterest});
 poi30 = L.marker([600, 273], {icon: pointOfInterest});
 poi31 = L.marker([827, 651], {icon: pointOfInterest});
@@ -302,7 +302,7 @@ poi45 = L.marker([897, 330], {icon: pointOfInterest});
 poi46 = L.marker([664, 451], {icon: pointOfInterest});
 poi47 = L.marker([471, 827], {icon: pointOfInterest});
 poi48 = L.marker([39, 217], {icon: pointOfInterest});
-poi49 = L.marker([728, 243], {icon: pointOfInterest});
+poi49 = L.marker([728, 230], {icon: pointOfInterest});
 poi50 = L.marker([311, 663], {icon: pointOfInterest});
 poi51 = L.marker([398, 550], {icon: pointOfInterest});
 poi52 = L.marker([376, 549], {icon: pointOfInterest});
